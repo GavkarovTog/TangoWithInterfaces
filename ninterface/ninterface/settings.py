@@ -51,10 +51,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ninterface.urls'
 
-TEMPLATES = [
+TEMPLATES = [a
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
