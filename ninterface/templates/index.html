@@ -1,12 +1,26 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CodeWithHarry Cheatsheet</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
 <body>
-    <h1>This is a sample template file.</h1>
+    <div class="container">
+        <div class="content">
+            <div class="form_text_block">   
+                <form action="" method="get" class="form">
+                    <input type="file" name="file" id="fileinput">
+                    <button id="getfile" class="btn">Click</button>
+                </form>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo deserunt ut explicabo in fuga obcaecati, architecto, quibusdam alias harum non quis minus laudantium, modi dicta. Delectus quia veritatis voluptatum distinctio!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'assets/js/main.js' %}"></script>
 </body>
 </html>
