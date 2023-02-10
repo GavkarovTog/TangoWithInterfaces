@@ -1,10 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.http import HttpResponseBadRequest, JsonResponse
+from django.http import HttpResponseBadRequest, JsonResponse, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
-from . import utils
-
+@csrf_exempt
 def index(request):
-    text = request.GET.get('text')
+    text = request.POST.get('text')
     print(text)
     return render(request, "index.html")

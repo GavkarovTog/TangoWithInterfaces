@@ -14,9 +14,10 @@ function previewFile() {
     }
     $.ajax({
         url: '',
-        type: 'get',
+        type: 'POST',
         data: {
             text: "Deniss"
         }
     });
 }
+
