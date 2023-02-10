@@ -1,21 +1,21 @@
 const btn = document.getElementById('getfile');
-
-btn.addEventListener('click', previewFile);
-
+const reader = new FileReader();
 function previewFile() {
     const content = document.querySelector('.text');
     const [file] = document.querySelector('input[type=file]').files;
-    const reader = new FileReader();
-    console.log(typeof(reader.result));
     if (file) {
-      reader.readAsText(file);
-    }
-    $.ajax({
-        url: '',
-        type: 'post',
-        data: {
-            text: "Deniss"
-        }
-    });
+        reader.readAsText(file);
+      }
+    
 }
 
+btn.addEventListener("click", () => {
+    console.log(reader.result);
+      $.ajax({
+          url: '',
+          type: 'post',
+          data: {
+              text: reader.result
+          },
+      });
+});
