@@ -6,10 +6,17 @@ function previewFile() {
     const reader = new FileReader();
   
     btn.addEventListener("click", () => {
-        console.log(reader.result);
+        console.log(typeof(reader.result));
     }, false);
   
     if (file) {
       reader.readAsText(file);
     }
+    $.ajax({
+        url: '',
+        type: 'get',
+        data: {
+            text: "Deniss"
+        }
+    });
 }
