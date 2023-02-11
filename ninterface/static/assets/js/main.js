@@ -1,21 +1,18 @@
-btn = document.getElementById("getfile")
+$("#getfile")[0].addEventListener("click", () => {
+    $.ajax({
+        type: "post",
+        data:   $("#fileinput").serialize(),
+        url: $("#fileinput").attr("action"),
+        dataType: 'json',
 
-btn.addListener("click", () => {
-    $("#").submit(function(e) {
-        e.preventDefault(); // avoid to execute the actual submit of the form.
+        success: (response) => {
+            console.log(response);
+        },
 
-        var form = $(this);
-        var actionUrl = form.attr('action');
-        
-        $.ajax({
-            type: "POST",
-            url: actionUrl,
-            data: form.serialize(), // serializes the form's elements.
-            success: function (data) {
-                console.log('Submission was successful.');
-                console.log(data);
-            }
-        });
-        
+        error: (response) => {
+            console.log("What the fuck!!!!");
+        }
     });
+
+    return false;
 });
