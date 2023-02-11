@@ -1,21 +1,21 @@
-const btn = document.getElementById('getfile');
-const reader = new FileReader();
-function previewFile() {
-    const content = document.querySelector('.text');
-    const [file] = document.querySelector('input[type=file]').files;
-    if (file) {
-        reader.readAsText(file);
-      }
-    
-}
+btn = document.getElementById("getfile")
 
-btn.addEventListener("click", () => {
-    console.log(reader.result);
-      $.ajax({
-          url: '',
-          type: 'post',
-          data: {
-              text: reader.result
-          },
-      });
+btn.addListener("click", () => {
+    $("#").submit(function(e) {
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+
+        var form = $(this);
+        var actionUrl = form.attr('action');
+        
+        $.ajax({
+            type: "POST",
+            url: actionUrl,
+            data: form.serialize(), // serializes the form's elements.
+            success: function (data) {
+                console.log('Submission was successful.');
+                console.log(data);
+            }
+        });
+        
+    });
 });
